@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.movie.ui.theme.MainScreen
 import com.example.movie.ui.theme.MovieTheme
 import dagger.hilt.android.AndroidEntryPoint
 
