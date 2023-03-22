@@ -12,6 +12,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
@@ -28,7 +29,7 @@ fun MainScreen(viewModel: MainViewModel) {
             modifier = Modifier
                 .fillMaxWidth()
         ) {
-            items(movies.take(10)) { item ->
+            items(movies.take(200)) { item ->
                 MovieItem(item = item)
             }
         }
@@ -42,6 +43,7 @@ fun MovieItem(item: Movies) {
         elevation = 4.dp,
         modifier = Modifier
             .padding(top = 8.dp)
+            .width(300.dp)
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -52,7 +54,8 @@ fun MovieItem(item: Movies) {
             Text(
                 text = item.name,
                 fontSize = 24.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
             )
             Image(
                 painter = rememberImagePainter(item.image.medium),
